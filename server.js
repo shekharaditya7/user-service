@@ -29,7 +29,7 @@ app.use("/api/auth", require("./Auth/Route"));
 app.get("/admin", adminAuth, (req, res) => res.send("Admin Route"));
 app.get("/basic", userAuth, (req, res) => res.send("User Route"));
 
-const PORT = 5000;
+const PORT = 4898;
 console.log(process.env.NODE_ENV);
 app.listen(PORT, () => console.log(`Server Connected to port ${PORT}`));
 
