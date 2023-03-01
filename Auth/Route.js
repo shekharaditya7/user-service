@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { adminAuth } = require("../middleware/auth");
 
-const { register, login, loginStatus } = require("./auth");
+const { register, login, loginStatus } = require("./Auth");
 
 router.route("/login-status").get(loginStatus);
 router.route("/register").post(register);
