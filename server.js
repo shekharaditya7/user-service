@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV;
 const origin =
   env === "production"
     ? "https://this-is-me-74cbf.web.app"
-    : "http://localhost:300";
+    : "http://localhost:3000";
 
 const connectDB = require("./db");
 
@@ -29,7 +29,7 @@ app.use("/api/auth", require("./Auth/Route"));
 app.get("/admin", adminAuth, (req, res) => res.send("Admin Route"));
 app.get("/basic", userAuth, (req, res) => res.send("User Route"));
 
-const PORT = 4898;
+const PORT = 5000;
 console.log(process.env.NODE_ENV);
 app.listen(PORT, () => console.log(`Server Connected to port ${PORT}`));
 
