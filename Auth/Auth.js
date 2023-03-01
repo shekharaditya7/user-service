@@ -17,7 +17,11 @@ exports.loginStatus = async (req, res, next) => {
           if (user) {
             res.status(200).json({
               message: "User logged in.",
-              user,
+              user: {
+                email: user.email,
+                name: user.name,
+                token,
+              },
             });
           } else {
             res.status(200).json({
@@ -67,7 +71,11 @@ exports.register = async (req, res, next) => {
           });
           res.status(200).json({
             message: "User successfully created.",
-            user,
+            user: {
+              email: user.email,
+              name: user.name,
+              token,
+            },
           });
         })
         .catch((err) =>
@@ -112,7 +120,11 @@ exports.login = async (req, res, next) => {
           });
           res.status(200).json({
             message: "Login successful.",
-            user,
+            user: {
+              email: user.email,
+              name: user.name,
+              token,
+            },
           });
         } else
           res.status(401).json({
